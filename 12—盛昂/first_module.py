@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-g_num = 100 
 def show():
     print('hanshu')
 
