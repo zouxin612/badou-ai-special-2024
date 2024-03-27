@@ -6,6 +6,10 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+original_img = cv2.imread('lenna.png')  # 以BGR读取
+print('original img', original_img)
+cv2.imshow("original img", original_img)  # cv2本身的展示是正确的
+
 
 # 实现灰度化
 def imgToGray(img):
@@ -21,12 +25,8 @@ def imgToGray(img):
     return img_gray
 
 
-original_img = cv2.imread('lenna.png')  # 以BGR读取
-print('original img', original_img)
-cv2.imshow("original img", original_img)  # cv2本身的展示是正确的
-
 plt.subplot(221)
-# img = plt.imread('lenna.png')
+# img_rgb = plt.imread('lenna.png')
 img_rgb = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)  # 转为 RGB
 print('rgb img', img_rgb)
 plt.imshow(img_rgb)
