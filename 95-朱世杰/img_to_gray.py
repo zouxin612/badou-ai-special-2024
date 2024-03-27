@@ -23,9 +23,7 @@ def imgToGray(img):
 
 original_img = cv2.imread('lenna.png')  # 以BGR读取
 print('original img', original_img)
-new_img = imgToGray(original_img)
-print('new_img', new_img)
-cv2.imshow("image show gray", original_img)  # cv2本身的展示是正确的
+cv2.imshow("original img", original_img)  # cv2本身的展示是正确的
 
 plt.subplot(221)
 # img = plt.imread('lenna.png')
@@ -34,6 +32,8 @@ print('rgb img', img_rgb)
 plt.imshow(img_rgb)
 
 plt.subplot(222)
+new_img = imgToGray(original_img)
+print('new img', new_img)
 plt.imshow(new_img, cmap='gray')
 
 
