@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image
 # from skimage.color import rgb2gray
 
 img = cv2.imread("./lenna.png")
@@ -24,8 +25,9 @@ print(img_gray)
 cv2.imshow('image_gray', img_gray)
 
 # 二值图
-# image_blackwhite1 = np.where(img_gray/255 > 0.5, 1, 0)
-
+image_blackwhite1 = np.where(img_gray/255 > 0.5, 1, 0)
+print(image_blackwhite1.dtype) #int32型
+# cv2.imshow('image_blackwhite', image_blackwhite1)   报错 CV无法显示int32型
 def image_blackwhite(img_gray):
     '''
     :param img_gray: 传入灰度图
@@ -40,7 +42,8 @@ def image_blackwhite(img_gray):
                 img_gray[i, j] = 0
     return img_gray
 image_blackwhite = image_blackwhite(img_gray)
-# print(image_blackwhite1 == image_blackwhite )
+print(image_blackwhite.dtype) #float64型
+print(image_blackwhite1 == image_blackwhite)
 cv2.imshow('image_blackwhite', image_blackwhite)
 
 # 用plt展示图片
@@ -51,5 +54,7 @@ plt.subplot(222)
 plt.imshow(img_gray, cmap='gray')
 plt.subplot(223)
 plt.imshow(image_blackwhite, cmap='gray')
+plt.subplot(224)
+plt.imshow(image_blackwhite1, cmap='gray')   # CV无法显示int32型，但是plt显示正常
 plt.show()
 
