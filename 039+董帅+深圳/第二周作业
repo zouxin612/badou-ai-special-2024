@@ -1,0 +1,29 @@
+#灰度图
+import cv2
+import numpy as np
+img_read=cv2.imread('lenna.png')#读图片
+img_process=cv2.cvtColor(img_read,cv2.COLOR_BGR2RGB)#转换成RGB
+height,width,channes=img_process.shape#得到图片尺寸
+img_gray=np.zeros((height,width),dtype=np.uint8)#创立和原图一样空的矩阵
+for i in range(height):
+    for j in range(width):
+        img_gray[i,j]=int(0.3*img_process[i,j,0]+0.59*img_process[i,j,1]+0.11*img_process[i,j,2])#灰度化
+
+# print(img_gray)
+# print(img_process)
+# print(f'''image show gray: {img_gray}''')
+# cv2.imshow('image show gray',img_gray)
+# cv2.imshow('original',img_read)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
+#二值化
+img_binary=np.zeros((height,width),dtype=np.unit8)
+for i in range(height):
+    for j in range(width):
+        img_new=img_gray[i//255,j//255]
+        if ( img_new<0.5):
+            img_binary[i,j]=0
+        else:
+            img_binary[i,j]=1
+    
