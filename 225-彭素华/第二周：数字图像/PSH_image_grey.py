@@ -35,7 +35,7 @@ plt.show()
 img2 = cv2.imread("lenna.png")  # 读取原始图片
 gray_image = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)  # 利用cv2将原始图片转化为灰度图
 rows, cols = gray_image.shape[:2]
-binary_image = np.zeros((rows, cols), dtype=img.dtype)
+binary_image = np.zeros((rows, cols), dtype=img2.dtype)
 for i in range(rows):  # 再利用灰度图去实现二值化
     for j in range(cols):
         if gray_image[i, j] <= 100:
@@ -47,27 +47,4 @@ for i in range(rows):  # 再利用灰度图去实现二值化
 plt.imshow(binary_image, cmap='gray')
 plt.show()  # 使用plt画图，最后写一个plt.show()才会将图片显示出来
 
-# 实现二值化：(使用plt来实现)
-img3 = cv2.imread("lenna.png")  # 读取原始图片
-gray_image = cv2.cvtColor(img3, cv2.COLOR_RGB2GRAY)  # 利用plt将原始图片转化为灰度图
-rows, cols = gray_image.shape[:2]
-binary_image = np.zeros((rows, cols), dtype=img.dtype)
-for i in range(rows):  # 再利用灰度图去实现二值化
-    for j in range(cols):
-        if gray_image[i, j] <= 100:
-            binary_image[i, j] = 0
-        else:
-            binary_image[i, j] = 1
-# binary_image = np.where(gray_image >= 0.5, 1, 0)
 
-plt.imshow(binary_image, cmap='gray')
-plt.show()  # 使用plt画图，最后写一个plt.show()才会将图片显示出来
-
-## 注意cv2.imread()读取一张图片之后得到的是：BGR；
-# 所以：使用cv2时：
-# img2 = cv2.imread("lenna.png") # 读取原始图片
-# gray_image = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY) #利用cv2将原始图片转化为灰度图
-## 而plt.imread()读取得到的图片得到的是RGB。
-# 所以：使用plt时：
-# img2 = plt.imread("lenna.png")  # 使用plt.imread读取原始图像
-# gray_image = cv2.cvtColor(img2, cv2.COLOR_RGB2GRAY)  # 使用cv2将原始图像转换为灰度图像
