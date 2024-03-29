@@ -17,7 +17,9 @@ def process_pic():
             # cv是GBR 灰度公式 G*0.11 + B*0.59 + R*0.3
             grey_result[i, j] = array[0] * 0.11 + array[1] * 0.59 + array[2] * 0.3
     # 保存灰度化结果
-    cv2.imwrite("C:\\Users\\1\\Desktop\\gray.png", grey_result)
+    # cv2.imwrite("C:\\Users\\1\\Desktop\\gray.png", grey_result)
+    cv2.imshow("grayscale", grey_result)
+    cv2.waitKey()
 
     # 二值化
     h, w = grey_result.shape
@@ -29,7 +31,9 @@ def process_pic():
             else:
                 result[i, j] = 0  # 0是黑色
     # 保存二值化结果
-    cv2.imwrite("C:\\Users\\1\\Desktop\\binarization.png", result)
+    cv2.imshow("binarization", result)
+    cv2.waitKey()
+    # cv2.imwrite("C:\\Users\\1\\Desktop\\binarization.png", result)
 
 
 # 插值
