@@ -21,5 +21,5 @@ for y in range(new_h):
         nearest_x = min(int(original_x + 0.5), w - 1)  # 处理边界情况
         new_img[y, x] = original_img[nearest_y, nearest_x]
 
-cv2.imshow('new img', new_img)
+cv2.imshow('inter nearest img', new_img)
 cv2.waitKey(0)
