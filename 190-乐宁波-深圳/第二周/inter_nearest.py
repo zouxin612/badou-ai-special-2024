@@ -17,8 +17,8 @@ for y in range(new_h):
     for x in range(new_w):
         original_x = x / scale_factor
         original_y = y / scale_factor
-        nearest_y = min(int(original_y + 0.5), h - 1)
-        nearest_x = min(int(original_x + 0.5), w - 1)
+        nearest_y = min(int(original_y + 0.5), h - 1)  # 处理边界情况
+        nearest_x = min(int(original_x + 0.5), w - 1)  # 处理边界情况
         new_img[y, x] = original_img[nearest_y, nearest_x]
 
 cv2.imshow('new img', new_img)
