@@ -55,6 +55,7 @@ cv2.waitKey(0)
 
 # 方法二：使用np.where
 img_binary = np.where(img_gray >= 0.5, 1, 0)
+img_binary = (img_binary * 255).astype(np.uint8)  # imshow只能显示0-255的图像
 cv2.imshow("image show binary", img_binary)  # 展示图片
 cv2.waitKey(0)
 
