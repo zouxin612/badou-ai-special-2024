@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-original_img = cv2.imread('lenna.png')  # 以BGR读取
+original_img = cv2.imread('../lenna.png')  # 以BGR读取
 print('original img', original_img)
 cv2.imshow("original img", original_img)  # cv2本身的展示是正确的
 
