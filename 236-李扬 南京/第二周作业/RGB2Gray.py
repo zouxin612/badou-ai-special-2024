@@ -12,7 +12,7 @@ cv.imshow("test", x)
 # for i in range(h):
 #     for j in range(w):
 #         m = x[i, j]
-#         grayImg[i, j] = int(m[0] * 0.5 + m[1] * 0.39 + m[2] * 0.11)
+#         grayImg[i, j] = int(m[0] * 0.11 + m[1] * 0.59 + m[2] * 0.3)
 
 #接口实现
 grayImg = rgb2gray(x)
