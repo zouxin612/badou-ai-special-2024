@@ -38,15 +38,15 @@ def bilinear(img, out_dim):
                 src_y1 = min(src_y0 + 1, row - 1)
 
                 # 计算插值权重并进行插值运算,注意：这里先X方向后Y方向
-                temp0 = (src_x1 - src_x) * img[src_x0, src_y0, i] + (src_x - src_x0) * img[src_x0, src_y1, i]  # X方向插值1
-                temp1 = (src_x1 - src_x) * img[src_x1, src_y0, i] + (src_x - src_x0) * img[src_x1, src_y1, i]  # X方向插值2
+                temp0 = (src_x1 - src_x) * img[src_x0, src_y0, i] + (src_x - src_x0) * img[src_x1, src_y0, i]  # X方向插值1
+                temp1 = (src_x1 - src_x) * img[src_x0, src_y1, i] + (src_x - src_x0) * img[src_x1, src_y1, i]  # X方向插值2
                 dst_img[dst_x, dst_y, i] = int((src_y1 - src_y) * temp0 + (src_y - src_y0) * temp1)            # Y方向插值
 
     return dst_img
 
 
 input_img = cv2.imread("../week2/lenna.png", 1)
-dst = bilinear(input_img, [600, 512])  # 这里的out_dim是 通常认知的  长 X 宽
+dst = bilinear(input_img, [1000, 512])  # 这里的out_dim是 通常认知的  长 X 宽
 
 cv2.imshow("bilinear_dst", dst)
 cv2.waitKey(0)
