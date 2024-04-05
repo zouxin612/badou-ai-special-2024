@@ -28,7 +28,7 @@ def bilinear(img, out_dim):
                 # 计算输入图像中对应当前输出像素位置的原始坐标
                 # 采用几何中心对称的方法
                 src_x = (dst_x + 0.5) * scale_x - 0.5  # scale_x为 ： row / dst_row  即把row的方向当作x
-                src_y = (dst_y + 0.5) * scale_y - 0.5   # scale_y为 ： col / dst_col  即把col的方向当作x
+                src_y = (dst_y + 0.5) * scale_y - 0.5   # scale_y为 ： col / dst_col  即把col的方向当作y
 
                 # 确定参与插值计算的四个像素点的坐标
                 src_x0 = int(np.floor(src_x))      # 向下取整得到整数坐标，即（X0,Y0）是最接近（0，0）的点
