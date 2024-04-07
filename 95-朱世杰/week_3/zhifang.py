@@ -16,7 +16,7 @@ dst = cv2.equalizeHist(gray)
 # 绘制图形
 plt.figure()
 plt.subplot(221)
-plt.imshow(img)
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 plt.subplot(222)
 plt.imshow(gray, cmap='gray')
 plt.subplot(223)
