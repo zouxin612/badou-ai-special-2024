@@ -13,7 +13,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # 直方图均衡化
 dst = cv2.equalizeHist(gray)
 
-# 绘制图形
+# 绘制图像
 plt.figure()
 plt.subplot(221)
 plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
@@ -33,6 +33,7 @@ gH = cv2.equalizeHist(g)
 rH = cv2.equalizeHist(r)
 result = cv2.merge((bH, gH, rH))
 
+# 绘制直方图
 plt.figure()
 plt.subplot(221)
 plt.hist(bH.ravel(), 256)
@@ -41,8 +42,8 @@ plt.hist(gH.ravel(), 256)
 plt.subplot(223)
 plt.hist(rH.ravel(), 256)
 
-# 绘制直方图
+# 绘制图像
 plt.subplot(224)
-gray = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
-plt.imshow(gray)
+result_rgb = cv2.cvtColor(result, cv2.COLOR_BGR2RGB)
+plt.imshow(result_rgb)
 plt.show()
