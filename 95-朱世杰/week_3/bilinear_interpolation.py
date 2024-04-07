@@ -25,9 +25,11 @@ def bilinear_interpolate(img, dst_h, dst_w):
             col0 = int(src_col)
             col1 = min(col0 + 1, src_w - 1)
             # 通过该四点坐标计算channel对应的各个色值
+            col_1 = (col1 - src_col)
+            col_0 = (src_col - col0)
             for color in range(channel):
-                temp0 = (col1 - src_col) * img[row0, col0, color] + (src_col - col0) * img[row0, col1, color]
-                temp1 = (col1 - src_col) * img[row1, col0, color] + (src_col - col0) * img[row1, col1, color]
+                temp0 = col_1 * img[row0, col0, color] + col_0 * img[row0, col1, color]
+                temp1 = col_1 * img[row1, col0, color] + col_0 * img[row1, col1, color]
                 img_dest[dst_row, dst_col, color] = int((row1 - src_row) * temp0 + (src_row - row0) * temp1)
     return img_dest
 
