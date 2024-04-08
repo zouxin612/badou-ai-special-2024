@@ -15,13 +15,15 @@ def nearestInsertValue(img, height, width):
     for i in range(height):
         for j in range(width):
             row = min(round(i / h_ratio), old_height - 1)
+            # row = round(i / h_ratio)
             col = min(round(j / w_ratio), old_width - 1)
+            # col = round(j / w_ratio)
             new_img[i][j] = img[row][col]
     return new_img
 
 
-img = cv2.imread('lenna.png')
-new_img = nearestInsertValue(img, 1200, 800)
+img = cv2.imread('../lenna.png')
+new_img = nearestInsertValue(img, 800, 800)
 cv2.imshow('old img', img)
 cv2.imshow('new img', new_img)
 cv2.waitKey(0)
