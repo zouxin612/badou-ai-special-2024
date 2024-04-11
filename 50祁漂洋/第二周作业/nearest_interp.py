@@ -1,7 +1,7 @@
 """
 @author: QiPiaoYang
 
-最临近差值
+最临近插值
 
 """
 
@@ -22,7 +22,7 @@ def function(srcImg, zoomRows, zoomCols):
     return emptyImage
 
 
-img = cv2.imread("lenna.png")
+img = cv2.imread("../lenna.png")
 zoom = function(img, 800, 800)
 cv2.imshow("nearest", zoom)
 cv2.imshow("srcImg", img)

@@ -8,7 +8,8 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("lenna.png")
+
+img = cv2.imread("../lenna.png")
 cv2.imshow("srcImg", img)
 cv2.waitKey(0)
 
