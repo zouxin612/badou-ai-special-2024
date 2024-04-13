@@ -8,7 +8,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # 获取灰度图像
-img = cv2.imread("../第二周作业/image/img/wallhaven-k7yog7_5760x3741.png",1)
+img = cv2.imread("../第二周作业/image/img/lenna.png",1)
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 # cv2.imshow("",gray)
 # cv2.waitKey(0)
@@ -27,7 +27,7 @@ cv2.imshow("Histogram Equalization",np.hstack([gray,dst]))
 cv2.waitKey(0)
 
 # 彩色直方图均衡化
-img2 = cv2.imread("../第二周作业/image/img/wallhaven-k7yog7_5760x3741.png",1)
+img2 = cv2.imread("../第二周作业/image/img/lenna.png",1)
 # 彩色图像均衡化,需要分解通道 对每一个通道均衡化
 (b,g,r) = cv2.split(img2)
 bh = cv2.equalizeHist(b)
