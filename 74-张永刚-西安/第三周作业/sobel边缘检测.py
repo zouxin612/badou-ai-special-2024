@@ -6,7 +6,7 @@ sobel边缘检测
 import cv2
 import numpy as np
 # 获取灰度图像
-img = cv2.imread("../第二周作业/image/img/wallhaven-k7yog7_5760x3741.png",0)
+img = cv2.imread("../第二周作业/image/img/lenna.png",0)
 
 '''
 Sobel函数求完导数后会有负值，还有会大于255的值。
