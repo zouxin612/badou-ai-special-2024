@@ -1,6 +1,5 @@
 import cv2 as cv
 import random
-
 import numpy as np
 
 img = cv.imread('../week2/lenna.png', 0)
