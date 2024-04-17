@@ -1,3 +1,3 @@
-# Computer Vision Assingments
+# Computer Vision Assignments
 Organization: Badou\
 Author: Zhang Shiyu
