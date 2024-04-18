@@ -1,5 +1,4 @@
 '''
-@author linrenkang
 增加噪声：高斯噪声和椒盐噪声
 '''
 import random
