@@ -1,4 +1,4 @@
-
+'''
 #调用噪声（直接）
 import cv2 as cv
 import numpy as np
@@ -12,6 +12,7 @@ cv.imshow('source',img)
 cv.imshow('noise_img',noise_poi)
 cv.waitKey()
 cv.destroyAllWindows()
+'''
 
 #高斯噪声过程
 import cv2
